@@ -128,18 +128,22 @@ function checkForBingo (bingoCard, drawnNumbers) {
 
 module.exports = checkForBingo;
 
+// Testing different winning numbers with the same gameboard to see if it returns the proper boolean
 function testFunctions() {
   const gameboard = [8, 29, 35, 54, 65, 13, 24, 44, 48, 67, 9, 21, 'FREE', 59, 63, 7, 19, 34, 53, 61, 1, 20, 33, 46, 72];
   const verticalNoFree = [8, 13, 9, 7, 1];
+  const verticalNoFreeTwo = [54, 48, 59, 53, 46];
   const verticalWithFree = [35, 44, 34, 33];
   const horizontalNoFree = [8, 29, 35, 65, 54];
+  const horizontalNoFreeTwo = [7, 19, 34, 53, 61];
   const horizontalWithFree = [9, 21, 59, 63];
   const topLeftDiagonal = [8, 24, 53, 72];
   const topRightDiagonal = [65, 48, 19, 1];
   const loser = [1, 33, 53, 65, 29, 75];
-  const testCases = [verticalNoFree,verticalWithFree, horizontalNoFree, horizontalWithFree, topLeftDiagonal, topRightDiagonal, loser];
+  const testCases = [verticalNoFree, verticalNoFreeTwo , verticalWithFree, horizontalNoFree, horizontalNoFreeTwo, horizontalWithFree, topLeftDiagonal, topRightDiagonal, loser];
   testCases.forEach(element => {
-    checkForBingo(gameboard, element);
+    console.log("Returns the boolean value of: " + checkForBingo(gameboard, element));
+    console.log("");
   });
 }
 
